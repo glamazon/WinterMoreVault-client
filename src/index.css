@@ -1,0 +1,138 @@
+* {
+	box-sizing: border-box;
+}
+
+
+html {
+	background-image: url("microphone.jpg");
+	height: 100%;
+	margin: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+
+
+
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 20px;
+	color: #444;
+	text-align: center;
+	line-height: 1.5;
+
+	/* height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center; */
+}
+
+nav,
+footer {
+	padding: 1% 0;
+	background-color: #aaa;
+	font-family: "Poiret One", cursive;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+header {
+	padding: 5% 0;
+	text-align: right;
+	font-family: 'Poiret One', cursive;
+}
+
+section {
+	min-height: 200px;
+	padding: 6% 0;
+	opacity: 0.8;
+	color: black;
+}
+
+section:nth-child(even) {
+	background-color: #ddd;
+}
+
+p {
+	font-family: Roboto, sans-serif;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+}
+
+.row {
+	display: flex;
+}
+
+.column {
+	flex: 5%;
+	padding: 2px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+	background-color: #111;
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+	 background:rgb(133, 141, 148);
+	 color: white;
+	 text-align: center;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
