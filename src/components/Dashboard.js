@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 class Dashboard extends React.Component{
   static contextType=AppContext
   render() {
+    console.log(this.context.events)
     return (<div>
       <h1>Dashboard</h1>
       <Link to='/eventform'>Add a New Event</Link>

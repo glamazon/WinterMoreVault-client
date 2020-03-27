@@ -1,8 +1,8 @@
 import config from '../config'
 
-const ArticleApiService = {
-  getArticles() {
-    return fetch(`${config.API_ENDPOINT}/articles`, {
+const EventApiService = {
+  getEvents() {
+    return fetch(`${config.API_ENDPOINT}/events`, {
       headers: {
       },
     })
@@ -12,8 +12,8 @@ const ArticleApiService = {
           : res.json()
       )
   },
-  getArticle(articleId) {
-    return fetch(`${config.API_ENDPOINT}/articles/${articleId}`, {
+  getEvent(eventId) {
+    return fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
       headers: {
       },
     })
@@ -23,8 +23,8 @@ const ArticleApiService = {
           : res.json()
       )
   },
-  getArticleComments(articleId) {
-    return fetch(`${config.API_ENDPOINT}/articles/${articleId}/comments`, {
+  getEventComments(eventId) {
+    return fetch(`${config.API_ENDPOINT}/events/${eventId}/comments`, {
       headers: {
       },
     })
@@ -34,14 +34,14 @@ const ArticleApiService = {
           : res.json()
       )
   },
-  postComment(articleId, text) {
+  postComment(eventId, text) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        article_id: articleId,
+        event_id: eventId,
         text,
       }),
     })
@@ -53,4 +53,4 @@ const ArticleApiService = {
   }
 }
 
-export default ArticleApiService
+export default EventApiService
