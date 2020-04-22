@@ -1,5 +1,6 @@
 import React from 'react';
 import cuuid from 'cuuid';
+import config from '../config'
 import AppContext from './AppContext';
 import TokenService from '../services/token-service'
 
@@ -15,7 +16,7 @@ class EventForm extends React.Component {
 			id: cuuid()
 		};
 
-		fetch('http://localhost:8000/api/events', {
+		fetch(config.API_ENDPOINT+'/events', {
 			method: 'post',
 			headers: {
 				'content-type': 'application/json',

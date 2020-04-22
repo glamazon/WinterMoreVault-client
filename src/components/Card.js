@@ -1,10 +1,11 @@
 import React from 'react';
 import AppContext from './AppContext'
+import config from '../config'
 import TokenService from '../services/token-service'
 class Card extends React.Component{
   static contextType = AppContext
   delete=()=>{
-    fetch('http://localhost:8000/api/events/'+this.props.id, {
+    fetch(config.API_ENDPOINT+'/events/'+this.props.id, {
 			method: 'delete',
 			headers: {
 				'content-type': 'application/json',

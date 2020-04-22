@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input } from '../Utils/Utils';
+import  config  from '../../config'
 import TokenService from '../../services/token-service';
 
 export default class LoginForm extends Component {
@@ -13,7 +14,7 @@ export default class LoginForm extends Component {
 		ev.preventDefault();
 		const { user_name, password } = ev.target;
 
-		fetch('http://localhost:8000/api/auth/login', {
+		fetch(config.API_ENDPOINT+'/auth/login', {
 			method: 'post',
 			headers: {
 				'content-type': 'application/json'

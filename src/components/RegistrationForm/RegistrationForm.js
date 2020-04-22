@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input, Required } from '../Utils/Utils';
-
+import config from '../../config'
 export default class RegistrationForm extends Component {
 	static defaultProps = {
 		onRegistrationSuccess: () => {}
@@ -11,7 +11,7 @@ export default class RegistrationForm extends Component {
 	handleSubmit = (ev) => {
 		ev.preventDefault();
 		const { full_name, nick_name, user_name, password } = ev.target;
-		fetch('http://localhost:8000/api/users', {
+		fetch(config.API_ENDPOINT+'/users', {
 			method: 'post',
 			headers: {
 				'content-type': 'application/json'
