@@ -8,9 +8,13 @@ Are you a live music junkie who tends to have a huge concert t-shirt collection 
 
 # API
 
-Include link to Server Repository
+[Wintermore Vault Server Repository](https://github.com/glamazon/wintermorevault-server)
 
 # Technology Used
+
+- React
+- Node
+- Express
 
 # Screenshots
 
