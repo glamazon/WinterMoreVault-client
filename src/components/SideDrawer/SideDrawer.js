@@ -11,9 +11,8 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
 <ul>
   <li><a href="/">Home</a></li>
-  <li><a href="/demo">Demo</a></li>
-  <li><a href="/add-event">Add Event</a></li>
-</ul>
+  <li><a href="/demo">Login</a></li>
+  </ul>
 </nav>);
 };
 export default sideDrawer;
