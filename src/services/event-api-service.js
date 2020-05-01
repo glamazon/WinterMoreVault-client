@@ -1,10 +1,13 @@
 import config from '../config'
+import TokenService from './token-service'
 
 const EventApiService = {
   getEvents() {
     return fetch(`${config.API_ENDPOINT}/events`, {
       headers: {
-      },
+				'content-type': 'application/json',
+				'authorization':`Bearer ${TokenService.getAuthToken()}`
+			},
     })
       .then(res =>
         (!res.ok)
@@ -15,7 +18,9 @@ const EventApiService = {
   getEvent(eventId) {
     return fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
       headers: {
-      },
+				'content-type': 'application/json',
+				'authorization':`Bearer ${TokenService.getAuthToken()}`
+			},
     })
       .then(res =>
         (!res.ok)
@@ -26,7 +31,9 @@ const EventApiService = {
   getEventComments(eventId) {
     return fetch(`${config.API_ENDPOINT}/events/${eventId}/comments`, {
       headers: {
-      },
+				'content-type': 'application/json',
+				'authorization':`Bearer ${TokenService.getAuthToken()}`
+			},
     })
       .then(res =>
         (!res.ok)
@@ -38,8 +45,9 @@ const EventApiService = {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
-      },
+				'content-type': 'application/json',
+				'authorization':`Bearer ${TokenService.getAuthToken()}`
+			},
       body: JSON.stringify({
         event_id: eventId,
         text,

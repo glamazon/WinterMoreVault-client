@@ -12,7 +12,7 @@ class EventForm extends React.Component {
 		const newEvent = {
 			concert: e.target.concert.value,
 			date: e.target.date.value,
-			notes: e.target.date.value,
+			notes: e.target.notes.value,
 			id: cuuid()
 		};
 

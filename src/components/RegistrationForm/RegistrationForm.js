@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Input, Required } from '../Utils/Utils';
-import config from '../../config'
+import config from '../../config';
+import './RegistrationForm.css'
+
+
+
+
 export default class RegistrationForm extends Component {
 	static defaultProps = {
 		onRegistrationSuccess: () => {}
