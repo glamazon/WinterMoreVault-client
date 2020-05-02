@@ -1,6 +1,79 @@
-import React from 'react';
+import React, {Component} from 'react'
+import TokenService from '../../services/token-service'
+import {Link } from 'react-router-dom'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import './Toolbar.css';
+
+
+class Toolbar extends Component {
+
+    state = {isLoggedIn: false}
+
+    handleLogOutClick = () => {
+        TokenService.clearAuthToken()
+    }
+
+    renderLogoutLink() {
+        return(
+            <div className='Toolbar__logged-in'>
+                <Link 
+                    onClick={this.handleLogOutClick} 
+                    to='/'
+                    className='Nav__link'>
+                    Logout
+                </Link>
+            </div>
+        )
+    }
+
+    renderLoginLink() {
+        return(
+            <div className='Toolbar__not-logged-in'>
+                <Link to='/LoginForm' className='Nav__link'>
+                    Login
+                </Link>
+
+                <Link to='/Registration Form' className='Nav__link'>
+                    Register
+                </Link> 
+            </div>
+
+        )
+    }
+
+    render() {
+        return (
+            <nav className='Toolbar'>
+                
+                { TokenService.hasAuthToken()
+                ? this.renderLogoutLink()
+                : this.renderLoginLink() }
+            </nav>
+        )
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const toolbar = props => (
@@ -16,6 +89,7 @@ const toolbar = props => (
   
   <li><a href="/">Home</a></li>
   <li><a href="/Login">Login</a></li>
+  <li><a href="/register">Register</a></li>
     
   </ul></div>
   </nav>
