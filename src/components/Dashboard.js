@@ -9,7 +9,7 @@ class Dashboard extends React.Component{
   componentDidMount(){
     EventApiService.getEvents()
     .then(events=>{
-      this.context.addEvent(events || [])
+      this.context.setEvents(events || [])
     })
   }
   render() {
@@ -21,7 +21,8 @@ class Dashboard extends React.Component{
         <Card artist={event.artist}
          date={event.date}
          id={event.id}
-        notes={event.notes}/>
+        notes={event.notes}
+        key={event.id}/>
       ))}
       </div>);
   }

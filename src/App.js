@@ -10,6 +10,7 @@ import AppContext from './components/AppContext';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+import Card from './components/Card'
 
 class App extends React.Component {
 	state = {
@@ -21,6 +22,17 @@ class App extends React.Component {
 			events: this.state.events.concat(event)
 		});
 	};
+
+setEvents = (events) => {
+		this.setState({
+			events
+		});
+	};
+
+
+
+
+
 	getEvents = () => {};
 	deleteEvent = (id) => {
 		this.setState({
@@ -66,7 +78,7 @@ class App extends React.Component {
 
 
 
-<Switch>
+
 
       <div style={{height: '100%'}}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -82,14 +94,18 @@ class App extends React.Component {
 					events: this.state.events,
 					addEvent: this.addEvent,
 					getEvents: this.getEvents,
+					setEvents: this.setEvents,
 					deleteEvent: this.deleteEvent
 				}}
 			>
-				<Route path={'/login'} component={LoginForm} />
+			<Switch>
+			
+			<Route path={'/login'} component={LoginForm} />
 				<Route path={'/register'} component={RegistrationForm} />
 				<Route path={'/'} exact component={LandingPage} />
 				<Route path={'/eventform'} component={EventForm} />
 				<Route path={'/dashboard'} component={Dashboard} />
+				</Switch>
 			</AppContext.Provider>
 
 
@@ -98,7 +114,10 @@ class App extends React.Component {
         </main>
         
       </div>
-</Switch>
+			
+			
+				
+
 
 
 

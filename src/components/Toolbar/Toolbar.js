@@ -10,18 +10,19 @@ class Toolbar extends Component {
     state = {isLoggedIn: false}
 
     handleLogOutClick = () => {
+      console.log('User is logging out');
         TokenService.clearAuthToken()
     }
 
     renderLogoutLink() {
         return(
             <div className='Toolbar__logged-in'>
-                <Link 
+                <button 
                     onClick={this.handleLogOutClick} 
-                    to='/'
+                    
                     className='Nav__link'>
                     Logout
-                </Link>
+                </button>
             </div>
         )
     }
@@ -86,12 +87,12 @@ const toolbar = props => (
   <div className="spacer" />
   <div className="toolbar_navigation-items">
   <ul>
-  
-  <li><a href="/">Home</a></li>
+    <li><a href="/">Home</a></li>
   <li><a href="/Login">Login</a></li>
-  <li><a href="/register">Register</a></li>
+  <li><a href="/Register">Register</a></li>
     
-  </ul></div>
+  </ul>
+  </div>
   </nav>
     </header>
 );

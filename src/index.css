@@ -43,13 +43,7 @@ footer {
   font-family: "Poiret One", cursive;
 }
 
-nav {
-  /* position: fixed; */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
+
 
 header {
   padding: 5% 0;
@@ -57,16 +51,6 @@ header {
   font-family: "Poiret One", cursive;
 }
 
-section {
-  min-height: 200px;
-  padding: 6% 0;
-  opacity: 0.8;
-  color: black;
-}
-
-section:nth-child(even) {
-  background-color: #ddd;
-}
 
 p {
   font-family: Roboto, sans-serif;

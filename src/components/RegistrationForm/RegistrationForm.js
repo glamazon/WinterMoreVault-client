@@ -23,19 +23,17 @@ export default class RegistrationForm extends Component {
 			},
       body: JSON.stringify({ 
         full_name: full_name.value,
-        nick_name: nick_name.value,
         user_name: user_name.value,
         password: password.value })
 		}).then((res) => {
 			full_name.value = '';
-			nick_name.value = '';
 			user_name.value = '';
 			password.value = '';
 			this.props.onRegistrationSuccess();
 		});
 
 		console.log('registration form submitted');
-		console.log({ full_name, nick_name, user_name, password });
+		console.log({ full_name, user_name, password });
 	};
 
 	render() {
@@ -67,3 +65,4 @@ export default class RegistrationForm extends Component {
 		);
 	}
 }
+

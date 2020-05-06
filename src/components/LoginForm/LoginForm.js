@@ -11,30 +11,58 @@ export default class LoginForm extends Component {
 
 	state = { error: null };
 
-	handleSubmitBasicAuth = (ev) => {
-		ev.preventDefault();
-		const { user_name, password } = ev.target;
+	
+handleSubmitBasicAuth = (ev) => {
+  ev.preventDefault();
+  const { user_name, password } = ev.target;
+  const url = config.API_ENDPOINT + '/auth/login';
+  const options = {
+    method: 'post',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      user_name: user_name.value,
+      password: password.value
+    })
+  };
+  
+  console.log('POSTing login...');
+  console.log(url);
+  console.log(JSON.stringify(options));
 
-		fetch(config.API_ENDPOINT + '/auth/login', {
-			method: 'post',
-			headers: {
-				'content-type': 'application/json'
-			},
-			body: JSON.stringify({
-				user_name: user_name.value,
-				password: password.value
-			})
-		})
-			.then(res => res.json())
-			.then((res) => {
+	
+	fetch(url, options)
+  .then(res => {
+  console.log('Got response:');
+  console.log(res);
+  if (res.ok) return res.json();
+  throw res.json();
+})
 
-				user_name.value = '';
-				password.value = '';
-				TokenService.saveAuthToken(res.authToken);
-				this.props.history.push('/dashboard');
-				this.props.onLoginSuccess();
-			});
-	};
+  .then((res) => {
+  console.log('Got JSON response:');
+  console.log(res);
+  user_name.value = '';
+  password.value = '';
+  TokenService.saveAuthToken(res.authToken);
+  this.props.history.push('/dashboard');
+  this.props.onLoginSuccess();
+})
+  .catch(res => {
+  console.log('There was an error:');
+  console.log(res.error);
+
+})
+
+
+
+
+};
+
+
+
+
 
 	render() {
 		const { error } = this.state;
