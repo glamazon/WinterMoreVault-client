@@ -80,7 +80,6 @@ handleSubmitBasicAuth = (ev) => {
 					</div>
 					<Button type="submit">Login</Button>
 				</form>
-				<Link to="/register">Signup</Link>
 			</>
 		);
 	}

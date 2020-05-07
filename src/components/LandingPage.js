@@ -12,10 +12,10 @@ class LandingPage extends React.Component{
       
 		<p>WinterMore is an ode to Bill Graham the famous concert promoter. In the 60's he created Winterland productions which created the first promotional concert t-shirts. Winterland and the Fillmore were two of the most famous concert venues in the Bay Area (where I am also from) where he produced concerts.</p>
 		
-		<p>To give this a try use the following Demo User and Password</p>
+		<p>To give this a try click on the Login in the navigation bar and use the following Demo User and Password (<strong>Note: </strong>Use exact capitaliation for User Name and Password as listed below).</p>
 
-		<p><strong>User Name:</strong> Demo</p>
-		<p><strong>Password:</strong> LiveNote5!</p>
+		<p><strong>User Name: </strong>Demo</p>
+		<p><strong>Password: </strong>PassWord5!</p>
 
     </section>
 
