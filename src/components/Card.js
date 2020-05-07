@@ -18,9 +18,10 @@ class Card extends React.Component{
 			});
   }
   render() {
+    const date = new Date(this.props.date)
     return (<div>
-      <h2>{this.props.concert}</h2>
-      <span>{this.props.date}</span>
+      <h2>{this.props.artist}</h2>
+      <span>{date.toLocaleDateString()}</span>
       <p>{this.props.notes}</p>
       <button onClick={(e) => this.delete()}>Delete</button>
       </div>);

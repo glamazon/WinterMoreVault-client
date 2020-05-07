@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Input, Required } from '../Utils/Utils';
-import config from '../../config'
+import config from '../../config';
+import './RegistrationForm.css'
+
+
+
+
 export default class RegistrationForm extends Component {
 	static defaultProps = {
 		onRegistrationSuccess: () => {}
@@ -18,19 +23,17 @@ export default class RegistrationForm extends Component {
 			},
       body: JSON.stringify({ 
         full_name: full_name.value,
-        nick_name: nick_name.value,
         user_name: user_name.value,
         password: password.value })
 		}).then((res) => {
 			full_name.value = '';
-			nick_name.value = '';
 			user_name.value = '';
 			password.value = '';
 			this.props.onRegistrationSuccess();
 		});
 
 		console.log('registration form submitted');
-		console.log({ full_name, nick_name, user_name, password });
+		console.log({ full_name, user_name, password });
 	};
 
 	render() {
@@ -56,12 +59,10 @@ export default class RegistrationForm extends Component {
 					</label>
 					<Input name="password" type="password" required id="RegistrationForm__password" />
 				</div>
-				<div className="nick_name">
-					<label htmlFor="RegistrationForm__nick_name">Nickname</label>
-					<Input name="nick_name" type="text" required id="RegistrationForm__nick_name" />
-				</div>
+				
 				<Button type="submit">Register</Button>
 			</form>
 		);
 	}
 }
+
