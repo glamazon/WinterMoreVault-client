@@ -32,8 +32,7 @@ export default class RegistrationForm extends Component {
 			this.props.onRegistrationSuccess();
 		});
 
-		console.log('registration form submitted');
-		console.log({ full_name, user_name, password });
+		
 	};
 
 	render() {
@@ -45,13 +44,13 @@ export default class RegistrationForm extends Component {
 					<label htmlFor="RegistrationForm__full_name">
 						Full name <Required />
 					</label>
-					<Input name="full_name" type="text" required id="RegistrationForm__full_name" />
+					<Input required name="full_name" type="text" required id="RegistrationForm__full_name" />
 				</div>
 				<div className="user_name">
 					<label htmlFor="RegistrationForm__user_name">
 						User name <Required />
 					</label>
-					<Input name="user_name" type="text" required id="RegistrationForm__user_name" />
+					<Input required name="user_name" type="text" required id="RegistrationForm__user_name" />
 				</div>
 				<div className="password">
 					<label htmlFor="RegistrationForm__password">
