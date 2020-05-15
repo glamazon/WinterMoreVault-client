@@ -3,6 +3,7 @@ import cuuid from 'cuuid';
 import config from '../config'
 import AppContext from './AppContext';
 import TokenService from '../services/token-service'
+import './EventForm.css';
 
 
 class EventForm extends React.Component {
@@ -33,12 +34,26 @@ class EventForm extends React.Component {
 	render() {
 		return (
 			<div>
-				This is the Event Form
+				<strong>Event Form</strong>
 				<form onSubmit={this.onSubmit}>
+
+				<br></br>
+
+				<label>
+				Concert
 					<input type="text" name="concert" />
+					
+					</label>
+					<label>
+					Date
 					<input type="date" name="date" />
+					</label>
+					<label>
+					Notes
 					<input type="text" name="notes" />
-					<button>Submit</button>
+					</label>
+					<br></br>
+					<button type="submit">Submit</button>
 				</form>
 			</div>
 		);
