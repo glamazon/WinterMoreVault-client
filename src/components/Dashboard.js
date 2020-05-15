@@ -13,7 +13,7 @@ class Dashboard extends React.Component{
     })
   }
   render() {
-    console.log(this.context.events)
+    
     return (<div>
       <h1>Dashboard</h1>
       <Link to='/eventform'>Add a New Event</Link>
