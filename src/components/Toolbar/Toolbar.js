@@ -10,7 +10,6 @@ class Toolbar extends Component {
     state = {isLoggedIn: false}
 
     handleLogOutClick = () => {
-      console.log('User is logging out');
         TokenService.clearAuthToken()
     }
 
